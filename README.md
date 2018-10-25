@@ -11,9 +11,12 @@ D网络用来判别真实数据和伪数据
 <br/><br/>
 
 
-![D网络为nn时，两个网络的loss对比](nn_iter_200.png)
+![](nn_iter_200.png)
+D网络为nn时，两个网络的loss对比
+![](rnn_iter_200.png)
+D网络为lstm时，两个网络的loss对比
+<br/><br/>
 
-![D网络为lstm时，两个网络的loss对比](rnn_iter_200.png)
 任何意见或者建议，欢迎联系下方邮件联系指正！
 ```
 424276284@qq.com
