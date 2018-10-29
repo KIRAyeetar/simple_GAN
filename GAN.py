@@ -134,8 +134,8 @@ class GAN(object):
             tf.nn.sigmoid_cross_entropy_with_logits(logits=d_out_g, labels=tf.zeros_like(d_out_g))) + tf.reduce_mean(
             tf.nn.sigmoid_cross_entropy_with_logits(logits=d_out_true, labels=tf.ones_like(d_out_true)))
 
-        train_step_g = tf.train.AdamOptimizer(lr_g).minimize(g_loss)
-        train_step_d = tf.train.AdamOptimizer(lr_d).minimize(d_loss)
+        train_step_g = tf.train.AdamOptimizer(lr_g).minimize(g_loss, var_list=self.g_net.w_list+self.g_net.b_list)
+        train_step_d = tf.train.AdamOptimizer(lr_d).minimize(d_loss, var_list=self.d_net.w_list+self.d_net.b_list)
 
         with tf.Session() as sess:
             init_op = tf.global_variables_initializer()
